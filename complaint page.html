@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Form - Company Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"], input[type="email"], select, textarea, input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .form-group input[type="file"] {
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Complaint Form</h2>
+        <form action="submit_complaint.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="orderNumber">Order Number (if applicable):</label>
+                <input type="text" id="orderNumber" name="orderNumber" placeholder="Enter your order number">
+            </div>
+
+            <div class="form-group">
+                <label for="complaintType">Complaint Type:</label>
+                <select id="complaintType" name="complaintType" required>
+                    <option value="">Select a complaint type</option>
+                    <option value="Product Issue">Product Issue</option>
+                    <option value="Delivery Problem">Delivery Problem</option>
+                    <option value="Payment Issue">Payment Issue</option>
+                    <option value="Customer Service">Customer Service</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="complaintDescription">Complaint Description:</label>
+                <textarea id="complaintDescription" name="complaintDescription" rows="5" placeholder="Describe your issue in detail" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="supportingDocuments">Upload Supporting Documents (Optional):</label>
+                <input type="file" id="supportingDocuments" name="supportingDocuments" accept=".jpg, .jpeg, .png, .pdf">
+            </div>
+
+            <button type="submit">Submit Complaint</button>
+        </form>
+    </div>
+
+</body>
+</html>
